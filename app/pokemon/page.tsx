@@ -1,6 +1,5 @@
 import { getRandomPokemonItem } from "@/services/pokemonService";
 
-export const dynamic = "error";
 export default async function RandomPokemon() {
     const pokemon = await getRandomPokemonItem();
 
@@ -10,7 +9,7 @@ export default async function RandomPokemon() {
                 <h1>{pokemon.name}: {pokemon.id}</h1>
                 <p>
                     <br />
-                    <a href="/api/revalidation">Revalidate link</a>
+                    <a href="/api/revalidation" target="__BLANK">Revalidate link</a>
                 </p>
             </div>
         </main>
