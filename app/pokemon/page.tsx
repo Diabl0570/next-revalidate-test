@@ -2,6 +2,7 @@ import { getRandomPokemonItem } from "@/services/pokemonService";
 import ReloadButton from "./ReloadButton";
 import { Suspense } from "react";
 
+export const dynamic = "force-static"
 export default async function RandomPokemon() {
     const pokemon = await getRandomPokemonItem();
 
