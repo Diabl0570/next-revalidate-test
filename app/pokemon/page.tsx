@@ -12,9 +12,7 @@ export default async function RandomPokemon() {
                 <h1>{pokemon.name}: {pokemon.id}</h1>
                 <p>
                     <br />
-                    <Suspense fallback={<>loading...</>}>
-                        <ReloadButton />
-                    </Suspense>
+                    <link href="/api/revalidation">Revalidate link</link>
                 </p>
             </div>
         </main>
