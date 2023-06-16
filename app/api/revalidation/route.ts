@@ -5,7 +5,6 @@ export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
     revalidateTag("pokemon")
-    // revalidatePath('/[locale]/brand/[slug]');
-
+    revalidatePath("/pokemon")
     return NextResponse.json({ revalidated: true, now: Date.now() })
 }
