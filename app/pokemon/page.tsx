@@ -1,6 +1,4 @@
 import { getRandomPokemonItem } from "@/services/pokemonService";
-import ReloadButton from "./ReloadButton";
-import { Suspense } from "react";
 
 export const dynamic = "error";
 export default async function RandomPokemon() {
