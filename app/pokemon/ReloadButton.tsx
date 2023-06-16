@@ -2,6 +2,7 @@
 
 import { triggerRevalidate } from "./func";
 
+
 const ReloadButton = () => {
     const handle = async () => {
         await triggerRevalidate();
