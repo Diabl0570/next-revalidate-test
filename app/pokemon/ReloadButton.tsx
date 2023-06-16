@@ -1,14 +1,8 @@
-"use client";
-
-import { triggerRevalidate } from "./func";
 
 
 const ReloadButton = () => {
-    const handle = async () => {
-        await triggerRevalidate();
-        window.location.reload()
-    }
-    return <><button onClick={handle}>Revalidate</button></>
+
+    return <><button >Revalidate</button></>
 }
 
 export default ReloadButton;
