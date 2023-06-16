@@ -1,5 +1,6 @@
 import { getRandomPokemonItem } from "@/services/pokemonService";
 
+// commit message
 export default async function RandomPokemon() {
     const pokemon = await getRandomPokemonItem();
 
