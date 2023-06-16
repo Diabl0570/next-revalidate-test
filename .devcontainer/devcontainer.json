@@ -1,0 +1,56 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "revalidation",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true,
+      "upgradePackages": true
+    },
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+      "omzPlugins": "https://github.com/romkatv/powerlevel10k.git https://github.com/zsh-users/zsh-autosuggestions"
+    },
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+    "ghcr.io/devcontainers-contrib/features/pnpm:2": {
+      "version": "7.27.0"
+    },
+    "ghcr.io/devcontainers-contrib/features/npm-package:1": {
+      "package": "next"
+    }
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "mutantdino.resourcemonitor"
+      ],
+      "settings": {
+        "dev.containers.copyGitConfig": true
+      }
+    }
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "initializeCommand": "find ~/.ssh/ -type f -exec grep -l 'PRIVATE' {} \\; | xargs ssh-add",
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+  "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh"
+
+  // "runArgs": [
+  //   "-v",
+  //   "${env:SSH_AUTH_SOCK}:/tmp/ssh-agent.socket",
+  //   "-e",
+  //   "SSH_AUTH_SOCK=/tmp/ssh-agent.socket"
+  // ]
+}
