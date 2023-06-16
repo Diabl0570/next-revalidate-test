@@ -1,5 +1,6 @@
 import { getRandomPokemonItem } from "@/services/pokemonService";
 import ReloadButton from "./ReloadButton";
+import { Suspense } from "react";
 
 export default async function RandomPokemon() {
     const pokemon = await getRandomPokemonItem();
@@ -9,8 +10,10 @@ export default async function RandomPokemon() {
             <div className="relative flex place-items-center ">
                 <h1>{pokemon.name}: {pokemon.id}</h1>
                 <p>
-                    <br/>
-                    <ReloadButton />
+                    <br />
+                    <Suspense fallback={<>loading...</>}>
+                        <ReloadButton />
+                    </Suspense>
                 </p>
             </div>
         </main>
