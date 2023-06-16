@@ -10,7 +10,7 @@ export default async function RandomPokemon() {
                 <h1>{pokemon.name}: {pokemon.id}</h1>
                 <p>
                     <br />
-                    <link href="/api/revalidation">Revalidate link</link>
+                    <a href="/api/revalidation">Revalidate link</a>
                 </p>
             </div>
         </main>
