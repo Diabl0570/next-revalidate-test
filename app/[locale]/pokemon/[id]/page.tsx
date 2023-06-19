@@ -1,6 +1,4 @@
-import ReloadButton from "@/app/pokemon/ReloadButton";
 import { getPokemonItem, getRandomPokemonItem } from "@/services/pokemonService";
-import { Suspense } from "react";
 
 type Props = {
     params: {
@@ -9,12 +7,12 @@ type Props = {
     };
   };
 export default async function RandomPokemon ({ params:{id} }: Props) {
-    const pokemon = await getRandomPokemonItem();
+    const pokemon = await getPokemonItem(id);
 
     return (
-        <main className="flex flex-col items-center justify-between p-24">
+        <main className="flex ">
             <div className="relative flex place-items-center ">
-                <h1>Random: {pokemon.name}: {pokemon.id}</h1>
+                <h1>{pokemon.name}: {pokemon.id}</h1>
             </div>
         </main>
     )

@@ -13,3 +13,12 @@ export async function getRandomPokemonItem() {
     });
     return await pokemon.json()
 }
+
+export async function getPokemonItem(id:string) {
+    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+        next: {
+            tags: ["pokemon"]
+        }
+    });
+    return await pokemon.json()
+}
