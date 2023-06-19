@@ -1,4 +1,5 @@
 import { getRandomPokemonItem } from "@/services/pokemonService";
+import ReloadButton from "./ReloadButton";
 
 export default async function RandomPokemon() {
     const pokemon = await getRandomPokemonItem();
@@ -10,6 +11,10 @@ export default async function RandomPokemon() {
                 <p>
                     <br />
                     <a href="/api/revalidation" target="__BLANK">Revalidate link</a>
+                </p>
+                <p>
+                    <br />
+                    <ReloadButton />
                 </p>
             </div>
         </main>
