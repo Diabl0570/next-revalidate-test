@@ -18,7 +18,9 @@ export async function getPokemonItem(id:string) {
     const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
         next: {
             tags: ["pokemon"]
-        }
+        },
+        cache: "force-cache"
+
     });
     return await pokemon.json()
 }
